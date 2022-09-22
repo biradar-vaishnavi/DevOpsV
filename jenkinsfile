@@ -15,8 +15,7 @@ pipeline {
             steps {
                 echo 'clonning Repository'
                 git branch: 'main', url: 'https://github.com/biradar-vaishnavi/DevOpsV.git'
-                
-                echo 'Repo clone successfully'
+               echo 'Repo clone successfully'
             }
             
         }
@@ -53,7 +52,7 @@ pipeline {
                 echo 'push image'
                 script{
                     
-                 docker.withRegistry( '', registryCredential ) {
+                 docker.withRegistry('registrycredential') {
                   dockerImage.push("$BUILD_NUMBER")
                   dockerImage.push('latest')
                  }}
