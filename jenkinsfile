@@ -33,7 +33,7 @@ pipeline {
             
             stage('DOCKERIZE') {
             steps {
-                echo 'Deploy the code'
+                echo 'deploy the code'
                 
                 script {
                     
@@ -68,7 +68,7 @@ pipeline {
         
         
         
-        stage('Remove Unused docker image') {
+        stage('remove Unused docker image') {
 steps{
 sh "docker rmi $imagename:$BUILD_NUMBER"
 sh "docker rmi $imagename:latest"
